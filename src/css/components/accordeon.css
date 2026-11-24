@@ -1,13 +1,59 @@
 /**
 * Accordeon
 */
+:root {
+    interpolate-size: allow-keywords;
+}
+.accordeon {
+    display: flex;
+    align-content: flex-start;
+    gap: 16px;
+}
+
+.accordeon details {
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+gap: 12px;
+} 
+
+.accordeon summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+.accordeon summary::-webkit-details-marker {
+    display: none;
+}
+
 .accordeon summary img {
     display: block;
     width: 102px;
     height: auto;
     border-radius: 10px;
     transition: transform 0.25s ease, opacity 0.25s ease;
-    justify-content: center;
 }
 
-.accordeon
+.accordeon details:hover summary img {
+    opacity: 0.85;
+}
+
+.accordeon details::details-content {
+    max-width: 0px;
+    opacity: 0; 
+    transition:
+    max-width 0.35s ease,
+    opacity 0.25s ease,
+    content-visibility 0.35s allow-discrete;
+
+}
+
+.accordeon details[open]::details-content {
+    max-width: 240px;
+    opacity: 1;
+    content-visibility: visible;
+
+.accordeon .contenu {
+    padding-top: 10 px;
+}
+}
