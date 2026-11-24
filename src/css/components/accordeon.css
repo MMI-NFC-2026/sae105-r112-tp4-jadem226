@@ -1,3 +1,13 @@
 /**
 * Accordeon
 */
+.accordeon summary img {
+    display: block;
+    width: 102px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    justify-content: center;
+}
+
+.accordeon
